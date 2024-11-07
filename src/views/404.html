@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es" class="bg-background text-text-primary">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Página no encontrada</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="/css/output.css" rel="stylesheet">
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(20deg); }
+            75% { transform: rotate(-15deg); }
+        }
+        .float { animation: float 6s ease-in-out infinite; }
+        .blink { animation: blink 1.5s step-end infinite; }
+        .wave { animation: wave 2s ease-in-out infinite; transform-origin: bottom right; }
+    </style>
+</head>
+<body class="min-h-screen font-sans flex flex-col justify-center items-center p-4">
+    <main class="text-center flex flex-col md:flex-row items-center gap-8">
+        <!-- Ghost illustration with animations -->
+        <div class="w-48 h-48 md:w-64 md:h-64 relative float">
+            <svg viewBox="0 0 200 200" class="w-full h-full text-accent-primary">
+                <path fill="currentColor" d="M100,20 C55,20 20,55 20,100 L20,180 Q20,190 30,190 Q40,190 40,180 L40,170 Q40,160 50,160 Q60,160 60,170 L60,180 Q60,190 70,190 Q80,190 80,180 L80,170 Q80,160 90,160 Q100,160 100,170 L100,180 Q100,190 110,190 Q120,190 120,180 L120,170 Q120,160 130,160 Q140,160 140,170 L140,180 Q140,190 150,190 Q160,190 160,180 L160,100 C160,55 145,20 100,20Z"/>
+                <circle fill="#1c1917" cx="70" cy="90" r="10" class="blink"/>
+                <circle fill="#1c1917" cx="130" cy="90" r="10" class="blink"/>
+                <path fill="#1c1917" d="M65,120 Q100,140 135,120" stroke="#1c1917" stroke-width="6" fill="none"/>
+                <!-- Add a waving hand -->
+                <path fill="currentColor" d="M170,130 Q180,120 190,130 Q200,140 190,150 Q180,160 170,150 Q160,140 170,130" class="wave"/>
+            </svg>
+        </div>
+        
+        <!-- Error message with fade-in animation -->
+        <div class="text-left opacity-0 animate-[fadeIn_1s_ease-in_forwards]">
+            <h1 class="text-6xl md:text-8xl font-bold text-accent-primary flex items-center gap-2">
+                404<span class="text-accent-secondary animate-bounce">!</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-text-secondary mt-2">
+                Lo sentimos, página no encontrada
+            </p>
+            <a href="/" class="inline-block mt-6 bg-accent-primary text-background font-semibold py-2 px-6 rounded-full hover:bg-accent-secondary transition-all duration-300 hover:scale-105 transform">
+                VOLVER AL INICIO
+            </a>
+        </div>
+    </main>
+</body>
+</html>
