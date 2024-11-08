@@ -5,8 +5,12 @@ const indexRouter = require('./routes/index');
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Servir archivos estáticos
-app.use(express.static(path.join(__dirname, 'public')));
+// Sirve los archivos estáticos desde 'dist' en producción
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../dist')));
+} else {
+  app.use(express.static(path.join(__dirname, 'public')));
+}
 
 app.use('/', indexRouter);
 
